@@ -1,0 +1,23 @@
+{
+  "name": "@opensec/pi-session-usage",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Provider-neutral Pi session-tree cost, cache-hit and throughput metrics with official DeepSeek pricing.",
+  "keywords": ["pi-package", "deepseek", "usage", "metrics"],
+  "license": "UNLICENSED",
+  "repository": { "type": "git", "url": "git+https://github.com/opensec-git/pi-session-usage.git" },
+  "pi": { "extensions": ["./index.ts"] },
+  "files": ["index.ts", "src", "README.md"],
+  "peerDependencies": { "@earendil-works/pi-coding-agent": "*" },
+  "peerDependenciesMeta": { "@earendil-works/pi-coding-agent": { "optional": true } },
+  "devDependencies": { "typescript": "^5.9.3", "@types/node": "^24.13.3" },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "test:pi": "node tests/pi-integration.mjs",
+    "test:tintin": "node tests/tintin-integration.mjs",
+    "typecheck": "tsc --noEmit --target ES2022 --module NodeNext --moduleResolution NodeNext --strict --skipLibCheck --allowJs --types node index.ts",
+    "check": "npm run typecheck && npm test"
+  },
+  "engines": { "node": ">=22" }
+}
